@@ -18,11 +18,23 @@ app.get("/health", (req, res) => {
   });
 });
 
+
 app.get("/api/hello", (req, res) => {
   res.json({
     message: "Hello from Express backend!",
   });
 });
+
+
+app.get("/api/status", (req, res) => {
+  res.json({
+    success: true,
+    service: "Backend API",
+    status: "Running 🚀",
+    time: new Date().toISOString()
+  });
+});
+
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
